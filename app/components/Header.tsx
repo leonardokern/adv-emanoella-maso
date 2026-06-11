@@ -5,10 +5,10 @@ import Image from "next/image";
 import { site } from "../lib/site";
 
 const navLinks = [
-  { href: "#areas", label: "Áreas" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#valores", label: "Valores" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#areas", label: "Áreas" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#valores", label: "Valores" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-gold-500/30 bg-charcoal-800/80 backdrop-blur-[14px]">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 py-[18px] md:px-10">
-        <a href="#top" className="flex shrink-0 items-center gap-3.5 text-cream-100 no-underline">
+        <a href="/" className="flex shrink-0 items-center gap-3.5 text-cream-100 no-underline">
           <Image
             src="/logo.png"
             alt="Logo EM — Emanoella Krauzer Maso"

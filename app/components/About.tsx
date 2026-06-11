@@ -21,6 +21,9 @@ export default function About() {
           />
         </div>
         <div>
+          <h2 className="sr-only">
+            Quem sou eu — {site.name}, advogada em Florianópolis
+          </h2>
           <span className="text-xs font-bold uppercase tracking-[4px] text-gold-500">
             Quem sou eu
           </span>
