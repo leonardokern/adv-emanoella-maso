@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Mulish } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { siteUrl } from "./lib/site";
 import "./globals.css";
 
@@ -93,6 +94,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-charcoal-800 text-cream-100">
         {children}
+        <Analytics />
       </body>
     </html>
   );
