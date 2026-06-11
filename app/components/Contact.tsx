@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { site } from "../lib/site";
 import { CheckIcon, MailIcon, WhatsAppIcon } from "./icons";
+import PrivacyModal from "./PrivacyModal";
 
 const inputClass =
   "border-0 border-b-[1.5px] border-charcoal-700/20 bg-transparent px-0.5 py-[11px] text-[15px] text-ink-900 outline-none transition-colors focus:border-gold-500";
@@ -12,6 +13,7 @@ const labelClass =
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -132,15 +134,20 @@ export default function Contact() {
               </button>
               <p className="text-center text-xs text-slate-400">
                 Ao enviar, você concorda com a{" "}
-                <a href="#" className="font-semibold text-gold-600 underline">
+                <button
+                  type="button"
+                  onClick={() => setPrivacyOpen(true)}
+                  className="cursor-pointer border-0 bg-transparent p-0 text-xs font-semibold text-gold-600 underline"
+                >
                   Política de Privacidade
-                </a>
+                </button>
                 .
               </p>
             </form>
           )}
         </div>
       </div>
+      <PrivacyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </section>
   );
 }

@@ -14,14 +14,12 @@ export default function Hero() {
           sizing="fill"
         />
       </div>
-      <Image
-        src="/logo.png"
-        alt=""
+      <span
         aria-hidden
-        width={183}
-        height={150}
-        className="pointer-events-none absolute -top-10 -right-[60px] z-0 h-auto w-[320px] opacity-[0.07] select-none md:w-[520px]"
-      />
+        className="pointer-events-none absolute -top-10 -right-[30px] z-0 font-display text-[340px] font-semibold leading-none text-gold-500/[0.06]"
+      >
+        §
+      </span>
       <div className="relative z-[1] mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-[34px] px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px] md:px-10 md:pt-[76px] md:pb-[84px]">
         <div className="animate-em-fade">
           <div className="mb-[30px] flex items-center gap-3.5">
