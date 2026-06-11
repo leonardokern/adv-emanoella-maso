@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { site } from "../lib/site";
-import { CheckIcon, MailIcon, WhatsAppIcon } from "./icons";
+import { CheckIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from "./icons";
 import PrivacyModal from "./PrivacyModal";
 
 const inputClass =
@@ -66,6 +66,24 @@ export default function Contact() {
                   E-mail
                 </span>
                 <span className="text-base font-semibold">{site.email}</span>
+              </span>
+            </a>
+            <a
+              href={site.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-cream-100 no-underline"
+            >
+              <span className="flex h-[46px] w-[46px] shrink-0 items-center justify-center border-[1.5px] border-gold-500 text-gold-500">
+                <LinkedInIcon size={18} />
+              </span>
+              <span>
+                <span className="block text-[11px] font-bold uppercase tracking-[2px] text-gold-500">
+                  LinkedIn
+                </span>
+                <span className="text-base font-semibold">
+                  {site.linkedinHandle}
+                </span>
               </span>
             </a>
           </div>

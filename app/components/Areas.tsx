@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { areas } from "../lib/site";
 
 export default function Areas() {
@@ -14,9 +15,10 @@ export default function Areas() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {areas.map((area) => (
-            <article
+            <Link
               key={area.number}
-              className="border border-gold-500/30 bg-charcoal-800 px-[34px] py-[42px]"
+              href={`/areas/${area.slug}`}
+              className="group flex flex-col border border-gold-500/30 bg-charcoal-800 px-[34px] py-[42px] no-underline transition-colors hover:border-gold-500"
             >
               <div className="mb-[18px] flex items-baseline justify-between">
                 <span className="font-display text-[40px] font-semibold text-gold-500">
@@ -30,7 +32,13 @@ export default function Areas() {
               <p className="text-[14.5px] leading-[1.72] text-cream-100/65">
                 {area.description}
               </p>
-            </article>
+              <span className="mt-6 inline-flex items-center gap-2 text-[12.5px] font-bold uppercase tracking-[2px] text-gold-500">
+                Saiba mais
+                <span className="font-display text-lg leading-none transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </Link>
           ))}
         </div>
       </div>
