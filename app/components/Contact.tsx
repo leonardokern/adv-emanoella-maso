@@ -14,11 +14,41 @@ const labelClass =
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: conectar a um backend de envio (API route + Resend/Formspree).
-    setSent(true);
+    if (sending) return;
+    setSending(true);
+    setErrorMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(
+          data?.error ??
+            "Não foi possível enviar a mensagem. Tente novamente ou fale pelo WhatsApp."
+        );
+      }
+      setSent(true);
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Não foi possível enviar a mensagem. Tente novamente ou fale pelo WhatsApp."
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -104,6 +134,14 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-[18px]">
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] h-px w-px opacity-0"
+              />
               <label className="flex flex-col gap-[7px]">
                 <span className={labelClass}>Nome</span>
                 <input
@@ -146,10 +184,16 @@ export default function Contact() {
               </label>
               <button
                 type="submit"
-                className="mt-2 cursor-pointer border-0 bg-charcoal-700 p-4 text-[14.5px] font-bold tracking-[0.4px] text-cream-100 transition-colors hover:bg-charcoal-800"
+                disabled={sending}
+                className="mt-2 cursor-pointer border-0 bg-charcoal-700 p-4 text-[14.5px] font-bold tracking-[0.4px] text-cream-100 transition-colors hover:bg-charcoal-800 disabled:cursor-wait disabled:opacity-60"
               >
-                Enviar mensagem
+                {sending ? "Enviando..." : "Enviar mensagem"}
               </button>
+              {errorMessage && (
+                <p role="alert" className="text-center text-[13px] font-semibold text-red-700">
+                  {errorMessage}
+                </p>
+              )}
               <p className="text-center text-xs text-slate-400">
                 Ao enviar, você concorda com a{" "}
                 <button
