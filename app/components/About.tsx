@@ -17,10 +17,13 @@ export default function About() {
             width={767}
             height={808}
             sizes="(max-width: 768px) 100vw, 40vw"
-            className="relative z-[1] h-auto w-full"
+            className="relative z-[1] h-auto w-full [mask-image:linear-gradient(to_bottom,black_70%,transparent_98%)]"
           />
         </div>
         <div>
+          <h2 className="sr-only">
+            Quem sou eu — {site.name}, advogada em Florianópolis
+          </h2>
           <span className="text-xs font-bold uppercase tracking-[4px] text-gold-500">
             Quem sou eu
           </span>
