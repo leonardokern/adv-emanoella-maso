@@ -173,13 +173,13 @@ export const areas: Area[] = [
     title: "Direito Civil",
     seoTitle: "Advogada de Direito Civil em Florianópolis · Contratos e Família",
     metaDescription:
-      "Advogada de direito civil em Florianópolis/SC. Contratos, responsabilidade civil e indenizações, questões de família — divórcio, pensão alimentícia, inventário — e proteção do patrimônio.",
+      "Advogada de direito civil em Florianópolis/SC. Contratos, responsabilidade civil e indenizações, questões de família — pensão alimentícia, guarda, inventário — e proteção do patrimônio.",
     description:
       "Contratos, responsabilidade civil, questões de família e patrimônio, com acompanhamento próximo em cada etapa.",
     headline: "Segurança jurídica para",
     headlineHighlight: "as decisões da sua vida.",
     intro: [
-      "O Direito Civil acompanha os momentos mais importantes da vida: um contrato relevante, a compra de um imóvel, um casamento ou divórcio, uma herança. São decisões que pedem orientação técnica antes, durante e depois.",
+      "O Direito Civil acompanha os momentos mais importantes da vida: um contrato relevante, a compra de um imóvel, uma herança. São decisões que pedem orientação técnica antes, durante e depois.",
       "Atuo de forma consultiva — prevenindo litígios com contratos bem redigidos — e contenciosa, defendendo seus interesses quando o conflito é inevitável, sempre com acompanhamento próximo em cada etapa.",
     ],
     services: [
@@ -196,7 +196,7 @@ export const areas: Area[] = [
       {
         title: "Família",
         description:
-          "Divórcio consensual e litigioso, pensão alimentícia, guarda e regulamentação de convivência, reconhecimento e dissolução de união estável.",
+          "Pensão alimentícia, guarda e regulamentação de convivência, reconhecimento e dissolução de união estável.",
       },
       {
         title: "Sucessões e inventário",
@@ -216,9 +216,9 @@ export const areas: Area[] = [
     ],
     faq: [
       {
-        question: "O divórcio precisa ir à Justiça?",
+        question: "Vale a pena tentar um acordo antes de entrar com processo?",
         answer:
-          "Nem sempre. Quando há consenso e não existem filhos menores ou incapazes, o divórcio pode ser feito em cartório, de forma rápida. Havendo filhos menores ou desacordo, a via judicial é necessária — e a mediação pode encurtar bastante o caminho.",
+          "Na maioria das vezes, sim. A solução consensual costuma ser mais rápida, menos custosa e menos desgastante do que um litígio. Atuo na mediação de conflitos buscando esse caminho primeiro — e, quando o acordo não é possível, a via judicial segue disponível, com a estratégia já amadurecida.",
       },
       {
         question: "Como funciona o inventário?",
