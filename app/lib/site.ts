@@ -9,7 +9,6 @@ export const site = {
   linkedinUrl: "https://www.linkedin.com/in/emanoella-maso/",
   linkedinHandle: "/emanoella-maso",
   location: "Florianópolis/SC",
-  locationLine: "Florianópolis/SC · Atendimento presencial e online",
 };
 
 export type Area = {

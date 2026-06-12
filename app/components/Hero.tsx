@@ -54,9 +54,6 @@ export default function Hero() {
               Conhecer as áreas
             </a>
           </div>
-          <p className="mt-[34px] text-[13px] tracking-[0.4px] text-cream-100/50">
-            {site.locationLine}
-          </p>
         </div>
         <div className="animate-em-fade-delayed flex items-center justify-center">
           <Image
